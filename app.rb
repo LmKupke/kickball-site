@@ -5,6 +5,11 @@ require_relative "models/team"
 team_data = TeamData.to_h
 team_names = team_data.keys
 
+team_names.each do |name|
+  Team.new(name)
+end
+
+
 get "/" do
   "<h1>The LACKP Homepage<h1>"
 
@@ -16,6 +21,6 @@ get "/teams" do
 end
 
 get "/teams/:team_name" do
-  @team_name = params[:team_name]
-  erb :layout
+  @team = team_data.to_h.select {|key| key == params[:team_name]}.first
+  erb :team
 end
