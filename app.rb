@@ -14,3 +14,8 @@ get "/teams" do
   @team_names = team_names
   erb :layout
 end
+
+get "/teams/:team_name" do
+  @team_name = params[:team_name]
+  erb :layout
+end

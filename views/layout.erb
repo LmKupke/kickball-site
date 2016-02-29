@@ -9,7 +9,7 @@
 <body>
   <ul>
     <% @team_names.each do |team| %>
-      <li><%= team %></li>
+      <li><a href="/teams/<%= team %>"><%= team %></a></li>
     <% end %>
   </ul>
   <script src="/javascripts/app.js"></script>
