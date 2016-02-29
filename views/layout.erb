@@ -7,11 +7,8 @@
 </head>
 
 <body>
-  <ul>
-    <% @team_names.each do |team| %>
-      <li><a href="/teams/<%= team %>"><%= team %></a></li>
-    <% end %>
-  </ul>
+  <%= yield %>
+  
   <script src="/javascripts/app.js"></script>
 </body>
 </html>
