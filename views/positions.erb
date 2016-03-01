@@ -1,0 +1,12 @@
+<ul>
+  <% @position = [] %>
+  <% @positions.each do |hash| %>
+    <% hash.each_key do |key| %>
+      <% @position << key %>
+    <% end %>
+  <% end %>
+  <% @position.uniq! %>
+  <% @position.each do |location| %>
+    <li><a href="/positions/<%= location %>"><%= location %></a></li>
+  <%end%>
+</ul>
